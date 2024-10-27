@@ -1,0 +1,157 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    color: #f8f8ff;
+    background-image: url('https://images8.alphacoders.com/134/1348853.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Main Header */
+.main-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    color: #FF6347;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px #000;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Container Styling */
+.container {
+    width: 90%;
+    max-width: 450px;
+    background-color: rgba(20, 20, 20, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-top: 10vh;
+}
+
+/* Quiz Header */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Styling the Select Dropdown */
+#anime-select {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #1e1e1e;
+    border-radius: 8px;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+  }
+  
+  #anime-select:focus {
+    border-color: #2196f3;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(33, 150, 243, 0.6);
+  }
+  
+  #anime-select:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #anime-select option {
+    font-weight: normal;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Optional: Adding a custom arrow icon for the dropdown */
+  #anime-select::after {
+    content: "▼";
+    position: absolute;
+    right: 10px;
+    font-size: 1rem;
+    color: #333;
+    pointer-events: none;
+  }
+  
+.timer {
+    font-size: 1.2rem;
+}
+
+/* Screen Sections */
+.screen {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+/* Buttons */
+button.btn {
+    background-color: #FF6347;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color: #FF4500;
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.feedback {
+    font-size: 1.2rem;
+    padding: 10px;
+    color: #FFD700;
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 575px) {
+    .container {
+        width: 95%;
+    }
+    .main-header {
+        font-size: 1.5rem;
+    }
+}

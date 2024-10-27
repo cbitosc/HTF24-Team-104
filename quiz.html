@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="quiz.css" />
+    <title>Anime Quiz</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1>Anime Kuizu アニメクイズ</h1>
+    </header>
+    <div class="container">
+        <header class="quiz-header">
+            <button class="btn leaderboard-btn" id="view-high-scores" onclick="window.location.href='./Leaderboard.html'">View Leaderboard</button>
+            <div class="timer">Time: <span id="timer">0</span></div>
+        </header>
+        <main class="quiz-content">
+            <section id="quiz-start" class="screen">
+                <h1>Anime Quiz Challenge</h1>
+                <p>Select your favorite anime series:</p>
+                <select id="anime-select">
+                    <option value="" disabled selected>Select an anime</option>
+                    <option value="naruto">Naruto</option>
+                    <option value="attack_on_titan">Attack on Titan</option>
+                    <option value="one_piece">One Piece</option>
+                    <option value="death_note">Death Note</option>
+                </select>
+                <button id="start" class="btn start-btn">Start Quiz</button>
+            </section>
+            <section id="questions" class="screen hide">
+                <h2 id="question-text"></h2>
+                <div id="options" class="options"></div>
+            </section>
+            <section id="quiz-end" class="screen hide">
+                <h2>Quiz Completed!</h2>
+                <p>Your final score is: <span id="score-final"></span></p>
+                <p>Enter your initials: 
+                    <input type="text" id="name"  placeholder="jacky chain" />
+                    <button id="submit-score" class="btn submit-btn">Submit</button>
+                </p>
+            </section>
+            <div id="feedback" class="feedback hide"></div>
+        </main>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
+
