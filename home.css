@@ -1,0 +1,114 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    background-color: #1e1e1e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    text-shadow: 2px 5px 0px red;
+  }
+  
+  .center-wrapper {
+    margin: auto; 
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: whitesmoke;
+    font-weight: bold;
+  }
+  
+  .login {
+    background-color: black;
+  }
+  
+  .signup {
+    background-color: black;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .content-overlay {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    padding: 2rem;
+  }
+  
+  .content-overlay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .start-quiz {
+    background-color: #ff9800;
+  }
+  
+
+  footer {
+    background-color: #1e1e1e;
+    color: #ddd;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1;
+  }
+  

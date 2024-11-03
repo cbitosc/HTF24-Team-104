@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Kuizu アニメクイズ - Dashboard</title>
+  <link rel="stylesheet" href="after_login.css">
+</head>
+<body>
+
+  <header>
+    <h1>Anime Kuizu アニメクイズ</h1>
+    <nav>
+      <button class="btn logout">Logout</button>
+    </nav>
+  </header>
+  <main>
+    <div class="video-container">
+      <video autoplay loop muted playsinline class="background-video">
+        <source src="./login bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="dashboard-overlay">
+        <h2>Welcome Back, [Username]!</h2>
+        <p>Ready to dive back into the world of anime trivia?</p>
+        <div class="quiz-options">
+          <h3>Select a Quiz</h3>
+          <div class="quiz-buttons">
+            <button class="btn series" onclick="window.location.href='./quiz.html'">Click to Start</button>  
+          </div>
+        </div>
+        <div class="dashboard-info">
+          <div class="score-section">
+            <h3>Your Score</h3>
+            <p>Points: [Current Score]</p>
+            <button class="btn share-score" onclick="shareScore()">Share Score</button>
+          </div>          
+          <div class="leaderboard-section">
+            <h3>Leaderboard</h3>
+            <p>See where you rank!</p>
+            <button class="btn leaderboard" onclick="window.location.href='./Leaderboard.html'">View Leaderboard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Anime Kuizu アニメクイズ Showdown</p>
+  </footer>
+  <script>
+    function shareScore() {
+      const score = "[Current Score]"; 
+      const message = `I scored ${score} points in Anime Trivia Showdown! Can you beat my score?`;
+      if (navigator.share) {
+        navigator.share({
+          title: 'Anime Trivia Showdown',
+          text: message,
+          url: window.location.href 
+        }).then(() => {
+          console.log('Thanks for sharing!');
+        }).catch(console.error);
+      } else {
+        alert(`Copy and share this message:\n\n${message}`);
+      }
+    }
+  </script>
+</body>
+</html>

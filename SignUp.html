@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://www.pngall.com/wp-content/uploads/13/Anime-Logo-PNG-Cutout.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Sign up</title>
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100">
+    <header class="text-center py-3" style="background-color: #1e1e1e; color: white; width: 100%; position: absolute; top: 0; text-shadow: 2px 5px 0px red;">
+        <h1>Anime Kuizu アニメクイズ</h1>
+    </header>
+    <main class="form-signin w-100 m-auto" style="max-width: 330px; margin-top: 80px;">
+        <form id="signupForm">
+          <h1 class="h3 mb-3 fw-normal" style="color:white;">Sign up</h1>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingName" placeholder="Your Name" required>
+            <label for="floatingName">Name</label>
+          </div>
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+            <label for="floatingEmail">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+            <label for="floatingPassword">Create Password</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password" required>
+            <label for="floatingConfirmPassword">Confirm Password</label>
+          </div>
+          <div class="form-check text-start my-3">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault" style="color:white;">
+              Remember me
+            </label>
+          </div>
+          <button class="btn btn-primary w-100 py-2" type="submit" onclick="window.location.href='after_login.html'">Sign Up</button>
+          <p style="text-align: center; color: white; margin-top: 10px;">Have an account? <a href="./index1.htm" style="color: #0d6efd;">Sign in</a></p>
+        </form>
+    </main>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const name = document.getElementById('floatingName').value;
+            const email = document.getElementById('floatingEmail').value;
+            const password = document.getElementById('floatingPassword').value;
+            fetch('http://localhost:3000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, password })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); 
+                document.getElementById('signupForm').reset(); 
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+
+</body>
+</html>
